@@ -1,5 +1,5 @@
 #!/bin/bash
-source "$(dirname "$0")/config.sh"
+source "$(dirname "$0")/../config.sh"
 
 # 1. Install uv if not installed
 if ! command -v uv &> /dev/null; then
@@ -26,6 +26,6 @@ uv sync
 
 # 4. Run the client
 export HOST
-export O_M_PORT
-echo "Running o_m client..."
-uv run python "$O_M_CLIENT_PATH"
+export I_T_M_PORT
+echo "Running i_t_m client..."
+uv run python "$I_T_M_CLIENT_PATH"

@@ -1,5 +1,5 @@
 @echo off
-call "%~dp0config.bat"
+call "%~dp0..\config.bat"
 
 :: 1. Install uv if not installed
 where uv >nul 2>&1
@@ -25,5 +25,5 @@ echo Installing dependencies...
 uv sync
 
 :: 4. Run the client
-echo Running w_m client...
-uv run python "%W_M_CLIENT_PATH%"
+echo Running t_e_m client...
+uv run python "%T_E_M_CLIENT_PATH%"
