@@ -13,6 +13,7 @@ query = QueryType()
 
 @query.field("w_m_info")
 def resolve_w_m_info(_, info, id=None):
+    print("[w_m] w_m_info called")
     return {"i_d": "dummy-id", "status": "ok"}
 
 schema = make_executable_schema(TYPE_DEFS, query)

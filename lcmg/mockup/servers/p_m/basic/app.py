@@ -14,6 +14,7 @@ query = QueryType()
 
 @query.field("p_m_info")
 def resolve_p_m_info(_, info, s_t=None):
+    print("[p_m] p_m_info called")
     return {
         "i_d": "dummy-id",
         "p_m_o": [

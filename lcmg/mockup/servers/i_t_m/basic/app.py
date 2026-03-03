@@ -13,6 +13,7 @@ query = QueryType()
 
 @query.field("i_t_p_m_i")
 def resolve_i_t_p_m_i(_, info, sT=None, aD=None, vD=None):
+    print("[i_t_m] i_t_p_m_i called")
     return {
         "i_d": "dummy-id",
         "i_t_m_o": {
