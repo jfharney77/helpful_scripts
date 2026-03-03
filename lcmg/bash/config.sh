@@ -1,7 +1,8 @@
 #!/bin/bash
 # lcmg configuration
 
-PROJ_ROOT="/home/john/github/helpful_scripts"
+# PROJ_ROOT="/home/john/github/helpful_scripts"
+PROJ_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 
 HOST="0.0.0.0"
 

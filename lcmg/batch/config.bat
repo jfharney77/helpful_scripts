@@ -1,7 +1,8 @@
 @echo off
 :: lcmg configuration
 
-set PROJ_ROOT=\\wsl.localhost\Ubuntu\home\john\github\helpful_scripts
+:: set PROJ_ROOT=\\wsl.localhost\Ubuntu\home\john\github\helpful_scripts
+for %%i in ("%~dp0..\..") do set PROJ_ROOT=%%~fi
 
 set HOST=0.0.0.0
 
