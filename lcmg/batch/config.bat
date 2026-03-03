@@ -9,7 +9,7 @@ set HOST=0.0.0.0
 :: --- Ports ---
 set P_M_PORT=8000
 set I_T_M_PORT=8001
-set C_S_A_R_M_PORT=8002
+set C_S_A_R_M_PORT=8022
 set I_A_R_M_PORT=8003
 set O_I_M_PORT=8004
 set O_M_PORT=8005
