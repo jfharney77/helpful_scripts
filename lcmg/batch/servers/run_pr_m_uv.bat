@@ -1,5 +1,5 @@
 @echo off
-call "%~dp0config.bat"
+call "%~dp0..\config.bat"
 
 :: 1. Install uv if not installed
 where uv >nul 2>&1

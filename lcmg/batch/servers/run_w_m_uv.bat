@@ -1,5 +1,5 @@
 @echo off
-call "%~dp0config.bat"
+call "%~dp0..\config.bat"
 
 :: 1. Install uv if not installed
 where uv >nul 2>&1
@@ -25,5 +25,5 @@ echo Installing dependencies...
 uv sync
 
 :: 4. Run the fastapi app
-echo Starting t_b_m server on %HOST%:%T_B_M_PORT%...
-uv run python "%T_B_M_SERVER_PATH%"
+echo Starting w_m server on %HOST%:%W_M_PORT%...
+uv run python "%W_M_SERVER_PATH%"

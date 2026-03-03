@@ -1,5 +1,5 @@
 #!/bin/bash
-source "$(dirname "$0")/config.sh"
+source "$(dirname "$0")/../config.sh"
 
 # 1. Install uv if not installed
 if ! command -v uv &> /dev/null; then
@@ -26,6 +26,6 @@ uv sync
 
 # 4. Run the fastapi app
 export HOST
-export T_B_M_PORT
-echo "Starting t_b_m server on $HOST:$T_B_M_PORT..."
-uv run python "$T_B_M_SERVER_PATH"
+export C_S_A_R_M_PORT
+echo "Starting c_s_a_r_m server on $HOST:$C_S_A_R_M_PORT..."
+uv run python "$C_S_A_R_M_SERVER_PATH"
