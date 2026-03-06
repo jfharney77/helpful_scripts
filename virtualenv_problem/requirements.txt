@@ -2,3 +2,9 @@ requests
 fastapi
 uvicorn
 ariadne
+python-dotenv
+langgraph
+langchain-openai
+langchain-mcp-adapters
+pydantic
+httpx
