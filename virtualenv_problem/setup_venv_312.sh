@@ -43,3 +43,4 @@ echo ""
 echo "Installed packages:"
 pip list | grep -E "requests|fastapi|uvicorn|ariadne"
 
+chmod +x "$VENV_DIR/bin/activate"
