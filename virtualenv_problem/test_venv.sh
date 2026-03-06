@@ -13,9 +13,14 @@ source "$VENV_DIR/bin/activate"
 
 echo "Python: $(which python)"
 echo "Python version: $(python --version)"
+
+# Verify Python 3.11 is being used
+if ! python --version 2>&1 | grep -q "3.11"; then
+    echo "WARNING: Expected Python 3.11 but got $(python --version)"
+fi
 echo ""
 
-python3 - <<'EOF'
+python - <<'EOF'
 import importlib, sys
 
 packages = ["requests", "fastapi", "uvicorn"]
