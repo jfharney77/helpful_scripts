@@ -20,10 +20,11 @@ if ! python --version 2>&1 | grep -q "3.11"; then
 fi
 echo ""
 
-python - <<'EOF'
+python - "$SCRIPT_DIR/requirements.txt" <<'EOF'
 import importlib, sys
 
-packages = ["requests", "fastapi", "uvicorn", "ariadne"]
+with open(sys.argv[1]) as f:
+    packages = [line.strip() for line in f if line.strip()]
 for pkg in packages:
     try:
         mod = importlib.import_module(pkg)

@@ -41,6 +41,6 @@ pip install -r "$SCRIPT_DIR/requirements.txt"
 
 echo ""
 echo "Installed packages:"
-pip list | grep -E "requests|fastapi|uvicorn|ariadne"
+pip list | grep -iE "$(grep -v '^$' "$SCRIPT_DIR/requirements.txt" | paste -sd'|')"
 
 chmod +x "$VENV_DIR/bin/activate"
