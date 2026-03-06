@@ -43,5 +43,3 @@ echo ""
 echo "Installed packages:"
 pip list | grep -E "requests|fastapi|uvicorn|ariadne"
 
-echo ""
-echo "Virtual environment is active. Run 'deactivate' to exit."
