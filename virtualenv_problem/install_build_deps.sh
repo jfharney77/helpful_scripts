@@ -14,7 +14,19 @@ sudo apt-get install -y \
     libreadline-dev \
     libsqlite3-dev \
     ca-certificates \
-    software-properties-common
+    software-properties-common \
+    python3-pip
+
+echo ""
+echo "Adding deadsnakes PPA for Python 3.11..."
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt-get update
+
+echo "Installing Python 3.11..."
+sudo apt-get install -y \
+    python3.11 \
+    python3.11-venv \
+    python3.11-dev
 
 echo ""
 echo "Build dependencies installed successfully."
