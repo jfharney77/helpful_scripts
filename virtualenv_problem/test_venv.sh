@@ -23,7 +23,7 @@ echo ""
 python - <<'EOF'
 import importlib, sys
 
-packages = ["requests", "fastapi", "uvicorn"]
+packages = ["requests", "fastapi", "uvicorn", "ariadne"]
 for pkg in packages:
     try:
         mod = importlib.import_module(pkg)
