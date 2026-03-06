@@ -2,7 +2,7 @@
 # Experiment: set up a Python 3.11 virtual environment in WSL and install packages
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-VENV_DIR="$SCRIPT_DIR/.venv"
+VENV_DIR="$SCRIPT_DIR/.venv_311"
 PYTHON="python3.11"
 
 # 1. Install Python 3.11 if not available
