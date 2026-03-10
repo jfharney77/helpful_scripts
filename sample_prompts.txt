@@ -1,0 +1,107 @@
+type Query {
+    p_m_info(s_t: String) : PMItem
+
+}
+
+type POI {
+    p_t : String
+    u_t : String
+}
+
+type PMItem {
+    p_m_o: [POI]
+    i_d: String
+}
+
+---
+
+
+ok great.  Now, lets create a script called run_p_m_uv (for both bat and sh).  This script will run the     
+  newly created fastapi app using uv. 
+The script should do the following:
+1 - Install uv if it is not installed 
+2 - Initialize uv if there is no pyproject.toml
+3 - If there is a pyproject.toml, make sure to install all the dependencies outlined in the toml file
+4 - Run the main method of the fastapi application in app.py
+
+---
+
+ok great!
+now lets create a new directory under mockup called clients and create 
+a directory under clients called basic
+then lets create a client file for the graphql app that we just created
+
+---
+
+ok great!
+Can you add a new configuration variable P_M_SERVER_PATH that denotes
+the path to the app.py file?  Make sure to use this variable in the script
+
+---
+
+ok great!
+Can you create a new fastapi app in the directory (in a similar vein to before):
+PROJ_ROOT/lcmg/mockup/servers/i_t_m/basic
+
+use the following as the TYPE_DEFS:
+
+input ITD {
+    issue : String
+    score : String
+}
+
+input ADD {
+    aId : String
+    iT : [ ITD ]
+    updDT: String
+    vD : String
+}
+
+input VDD {
+    vId : String
+    iT: [ ITD ]
+    updDT : String
+    vD : String
+}
+
+type Query {
+    i_t_p_m_i (
+        sT: String
+        aD : [ ADD ]
+        vD : [ VDD ]
+
+    ): ITPMI
+
+
+}
+
+type ITPMI {
+    i_d : String
+    i_t_m_o : ITPD
+}
+
+type ITPD {
+    i_t : String
+}
+
+---
+
+OK, I would like to create more mockup fast api graphql apps
+Create the app.py and graphql_schema.py ijn a similar vein to the p_m
+fast api that was created before.  (The implementation doesnt really matter, just want to get the scripts to work)
+
+The names should be:
+1 - c_s_a_r_m
+2 - i_a_r_m
+3 - o_i_m
+4 - o_m
+5 - pr_m
+6 - t_a_m
+7 - t_b_m
+8 - t_d_m
+9 - t_e_m
+10 - v_r_m
+11 - w_m
+
+Create all of these in their respective directories in servers
+
