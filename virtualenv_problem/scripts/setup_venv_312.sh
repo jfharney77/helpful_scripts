@@ -1,9 +1,8 @@
 #!/bin/bash
 # Experiment: set up a Python 3.12 virtual environment in WSL and install packages
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DATA_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-VENV_DIR="$DATA_DIR/.venv_312"
+source "$(dirname "${BASH_SOURCE[0]}")/config.sh"
+VENV_DIR="$VENV_312"
 PYTHON="python3.12"
 
 # 1. Install Python 3.12 if not available
@@ -38,10 +37,10 @@ source "$VENV_DIR/bin/activate"
 echo "Python version: $(python --version)"
 echo "Installing packages from requirements.txt..."
 pip install --upgrade pip
-pip install -r "$DATA_DIR/requirements.txt"
+pip install -r "$REQUIREMENTS_FILE"
 
 echo ""
 echo "Installed packages:"
-pip list | grep -iE "$(grep -v '^$' "$DATA_DIR/requirements.txt" | paste -sd'|')"
+pip list | grep -iE "$(grep -v '^$' "$REQUIREMENTS_FILE" | paste -sd'|')"
 
 chmod +x "$VENV_DIR/bin/activate"

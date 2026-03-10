@@ -13,7 +13,7 @@ VENV_UV="$PROJ_ROOT/.venv"
 # Source layout
 SRC_DIR="$PROJ_ROOT/src"
 BACKEND_DIR="$PROJ_ROOT/src/backend"
-FRONTEND_DIR="$PROJ_ROOT/src/frontend"
+FRONTEND_DIR="$PROJ_ROOT/frontend"
 
 # Dependencies
 REQUIREMENTS_FILE="$PROJ_ROOT/requirements.txt"

@@ -1,9 +1,8 @@
 #!/bin/bash
 # Test that the virtual environment and installed packages work correctly
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DATA_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-VENV_DIR="$DATA_DIR/.venv"
+source "$(dirname "${BASH_SOURCE[0]}")/config.sh"
+VENV_DIR="$VENV_UV"
 
 if [ ! -d "$VENV_DIR" ]; then
     echo "Virtual environment not found. Run setup_venv.sh first."
@@ -21,7 +20,7 @@ if ! python --version 2>&1 | grep -q "3.11"; then
 fi
 echo ""
 
-python - "$DATA_DIR/requirements.txt" <<'EOF'
+python - "$REQUIREMENTS_FILE" <<'EOF'
 import importlib, sys
 
 with open(sys.argv[1]) as f:

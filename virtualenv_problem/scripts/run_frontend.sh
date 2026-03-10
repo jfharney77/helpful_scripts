@@ -1,9 +1,7 @@
 #!/bin/bash
 # Run the React frontend on port 3000
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DATA_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-FRONTEND_DIR="$DATA_DIR/frontend"
+source "$(dirname "${BASH_SOURCE[0]}")/config.sh"
 
 # ── Check for nvm / node / npm, install if missing ───────────────────────────
 NVM_DIR="${NVM_DIR:-$HOME/.nvm}"

@@ -1,9 +1,8 @@
 #!/bin/bash
 # Set up a uv-based virtual environment using requirements.txt
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DATA_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-VENV_DIR="$DATA_DIR/.venv"
+source "$(dirname "${BASH_SOURCE[0]}")/config.sh"
+VENV_DIR="$VENV_UV"
 
 # 1. Install uv if not available
 if ! command -v uv &> /dev/null; then
@@ -14,7 +13,7 @@ fi
 
 # 2. Generate pyproject.toml from requirements.txt
 echo "Generating pyproject.toml from requirements.txt..."
-python3 - "$DATA_DIR/requirements.txt" "$DATA_DIR/pyproject.toml" <<'EOF'
+python3 - "$REQUIREMENTS_FILE" "$PROJ_ROOT/pyproject.toml" <<'EOF'
 import sys
 
 req_file = sys.argv[1]
@@ -43,7 +42,7 @@ EOF
 
 # 3. Create the virtual environment and install dependencies
 export UV_PROJECT_ENVIRONMENT="$VENV_DIR"
-cd "$DATA_DIR" || exit 1
+cd "$PROJ_ROOT" || exit 1
 
 echo "Running uv sync..."
 uv sync
@@ -51,6 +50,6 @@ uv sync
 echo ""
 echo "Installed packages:"
 source "$VENV_DIR/bin/activate"
-pip list | grep -iE "$(grep -v '^$' "$DATA_DIR/requirements.txt" | paste -sd'|')"
+pip list | grep -iE "$(grep -v '^$' "$REQUIREMENTS_FILE" | paste -sd'|')"
 
 chmod +x "$VENV_DIR/bin/activate"
