@@ -17,3 +17,11 @@ FRONTEND_DIR="$PROJ_ROOT/frontend"
 
 # Dependencies
 REQUIREMENTS_FILE="$PROJ_ROOT/requirements.txt"
+
+# Environment variables
+ENV_FILE="$PROJ_ROOT/config/.env"
+if [ -f "$ENV_FILE" ]; then
+    set -a
+    source "$ENV_FILE"
+    set +a
+fi
